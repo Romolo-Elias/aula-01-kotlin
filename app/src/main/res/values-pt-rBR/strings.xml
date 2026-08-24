@@ -15,4 +15,8 @@
     <string name="your_password">Your password</string>
     <string name="lock_icon">Lock icon</string>
     <string name="eye_icon">Eye icon</string>
+    <string name="search_icon">Search icon</string>
+    <string name="search_by_recipes">Search by recipes</string>
+    <string name="categories">Categories</string>
+    <string name="newly_added_recipes">Newly added recipes</string>
 </resources>
