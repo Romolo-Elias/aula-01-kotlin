@@ -14,11 +14,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,12 +27,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import br.com.fiap.recipes.R
+import br.com.fiap.recipes.navigation.Destination
+import br.com.fiap.recipes.navigation.NavigationRoutes
 import br.com.fiap.recipes.ui.theme.RecipesTheme
 
 
 @Composable
-fun InitialScreen() {
+fun InitialScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -95,7 +96,9 @@ fun InitialScreen() {
                     }
                     Spacer(modifier = Modifier.width(8.dp))
                     Button(
-                        onClick = {},
+                        onClick = {
+                            navController.navigate(Destination.SignupScreen.route)
+                        },
                         colors = ButtonDefaults.buttonColors(
                             containerColor = MaterialTheme
                                 .colorScheme.tertiary
@@ -127,6 +130,6 @@ fun InitialScreen() {
 @Composable
 fun InitialScreenPreview(){
     RecipesTheme {
-        InitialScreen()
+        InitialScreen(rememberNavController())
     }
 }
